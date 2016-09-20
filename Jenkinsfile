@@ -24,13 +24,12 @@ node {
             usernameVariable: 'jervelocity'
         ]]
     ) {
-        sh "docker login -u ${env.DOCKERHUB_USERNAME} -p ${env.DOCKERHUB_PASSWORD} -e jervelocity@gmail.com"
+        sh "docker login -u jervelocity -p password -e jervelocity@gmail.com"
         sh "docker push jervelocity/dcos:${gitCommit()}"
     }
 
     // Deploy
     stage 'Deploy'
-
     marathon(
         url: 'http://marathon.mesos:8080',
         forceUpdate: false,
