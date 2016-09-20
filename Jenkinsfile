@@ -24,7 +24,7 @@ node {
             usernameVariable: 'jervelocity'
         ]]
     ) {
-        sh "docker login -u ${env.DOCKERHUB_USERNAME} -p ${env.DOCKERHUB_PASSWORD} -e demo@mesosphere.com"
+        sh "docker login -u ${env.DOCKERHUB_USERNAME} -p ${env.DOCKERHUB_PASSWORD} -e jervelocity@gmail.com"
         sh "docker push jervelocity/dcos:${gitCommit()}"
     }
 }
