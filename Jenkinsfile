@@ -20,8 +20,8 @@ node {
         [[
             $class: 'UsernamePasswordMultiBinding',
             credentialsId: 'jervelocity',
-            passwordVariable: 'jervelocity',
-            usernameVariable: 'password'
+            passwordVariable: 'password',
+            usernameVariable: 'jervelocity'
         ]]
     ) {
         sh "docker login -u ${env.DOCKERHUB_USERNAME} -p ${env.DOCKERHUB_PASSWORD} -e demo@mesosphere.com"
